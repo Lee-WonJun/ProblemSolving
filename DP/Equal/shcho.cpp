@@ -8,13 +8,9 @@ using namespace std;
 
 const int INF = 987654321;
 
-
-int dp[2000];
-
+int dp[1005];
 
 int solve(int n) {
-	if (n == 0) return 0;	// 0, 1
-
 	int& ret = dp[n];
 	if (ret != -1) return ret;
 
@@ -27,11 +23,6 @@ int solve(int n) {
 
 int main()
 {
-#ifndef ONLINE_JUDGE
-	freopen("input.txt", "r", stdin);
-	//freopen("output.txt", "w", stdout);
-#endif
-
 	ios_base::sync_with_stdio(false);
 	cin.tie(nullptr);
 	cout.tie(nullptr);
@@ -39,7 +30,6 @@ int main()
 
 	memset(dp, -1, sizeof(dp));
 	dp[0] = 0;
-	solve(1000);
 
 	int t;
 	cin >> t;
@@ -51,8 +41,6 @@ int main()
 			cin >> c;
 
 		int min_val = *min_element(arr.begin(), arr.end());
-		int min_move = INF;
-		
 
 		for (auto& c : arr)
 			c -= min_val;
