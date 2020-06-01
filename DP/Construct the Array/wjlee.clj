@@ -9,12 +9,10 @@
           number-one (my-mod (- d-avail d-number-one))
           answer (my-mod (- avail number-one))]
           (if (= acc n) d-answer
-          (recur avail number-one answer (inc acc) k n)
-          )))
+          (recur avail number-one answer (inc acc) k n))))
 
 (defn count-dp [n k x]
     (let [n-n (- n 2)
           n-k (dec k)
           n-o (if (= x 1) 1 0)]
-          (tail-count 1 n-o 1 0 n-k n-n))
-)
+          (tail-count 1 n-o 1 0 n-k n-n)))
