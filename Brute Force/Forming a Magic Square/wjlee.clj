@@ -3,8 +3,8 @@
    (if (next s)
      (for [head s
            tail (permutations (disj s head))]
-       (cons head tail))
-     [s])))
+          (cons head tail))
+          [s])))
 
 (defn is-magic [s]
     (let [[v1 v2 v3 v4 v5 v6 v7 v8 v9] s]
@@ -26,5 +26,4 @@
 (defn formingMagicSquare [s]
     (let [f (flatten s)
           magic (filter is-magic (permutations #{1 2 3 4 5 6 7 8 9}))]
-    (apply min (map #(calc-list f %) magic))
-    ))
+          (apply min (map #(calc-list f %) magic))))
